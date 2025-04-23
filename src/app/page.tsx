@@ -1,9 +1,15 @@
+import ProductCard from "@/components/ProductCard";
+import { fetchAllProducts } from "@/lib/api";
 
+export default async function Home() {
+  const products = await fetchAllProducts()
+  console.log(products)
 
-export default function Home() {
   return (
-    <div>
-
-    </div>
+    <main className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </main>
   );
 }
