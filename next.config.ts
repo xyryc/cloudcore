@@ -3,7 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["admin.refabry.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "admin.refabry.com",
+        pathname: "/storage/product/**",
+      },
+    ],
   },
 };
 
