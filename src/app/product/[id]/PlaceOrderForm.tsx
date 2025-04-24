@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '@/store';
 import { placeOrder } from '@/store/features/orderSlice';
 import { Button } from '@/components/ui/button';
-import { ProductType } from '@/types';
+import { Product } from '@/types';
 
-export default function PlaceOrderForm({ product }: { product: ProductType }) {
+
+export default function PlaceOrderForm({ product }: { product: Product }) {
     const dispatch = useDispatch<AppDispatch>();
     const { loading, success, error } = useSelector((state: RootState) => state.order);
 
@@ -15,7 +16,7 @@ export default function PlaceOrderForm({ product }: { product: ProductType }) {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
-    const [courier, setCourier] = useState('steadfast');
+    const [courier, setCourier] = useState('redx');
 
     const handleOrder = () => {
         const orderPayload = {
@@ -42,6 +43,9 @@ export default function PlaceOrderForm({ product }: { product: ProductType }) {
             <select value={courier} onChange={e => setCourier(e.target.value)} className="border p-2 w-full">
                 <option value="steadfast">Steadfast</option>
                 <option value="sundarban">Sundarban</option>
+                <option value="continental">Continental</option>
+                <option value="pathao">Pathao</option>
+                <option value="redx">Redx</option>
             </select>
             <input type="number" value={qty} onChange={e => setQty(Number(e.target.value))} className="border p-2 w-full" min="1" />
             <Button onClick={handleOrder} disabled={loading}>
