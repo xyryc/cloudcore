@@ -11,9 +11,14 @@ export default async function Home() {
     <>
       <h1 className="text-3xl font-bold text-center my-4">CloudCore Store</h1>
       <main className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        {products.length === 0 ? (
+          <p className="text-center col-span-full text-red-500">No products found. Please refresh.</p>
+        ) : (
+          products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))
+        )}
+
       </main>
     </>
   );
