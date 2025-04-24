@@ -1,13 +1,12 @@
 
 import { fetchAllProducts } from '@/lib/api';
 import Image from 'next/image';
-
 import React from 'react';
+import PlaceOrderForm from './PlaceOrderForm';
 
 export default async function ProductPage({ params }: { params: { id: string } }) {
     const allProducts = await fetchAllProducts();
     const product = allProducts?.find((item) => item.id === Number(params.id));
-    console.log(product)
 
     // return placeholder if no product found
     if (!product) {
@@ -32,6 +31,8 @@ export default async function ProductPage({ params }: { params: { id: string } }
             <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
             <p className="text-gray-700 mb-2">Price: {product.price}৳</p>
             <p className="text-gray-600">{product.description}</p>
+
+            <PlaceOrderForm product={product} />
         </div>
     );
 };
