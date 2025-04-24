@@ -6,7 +6,9 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 
 export default function ProductCard({ product }: { product: Product }) {
-    const imageUrl = `https://admin.refabry.com/storage/product/${product.image}`;
+    const BASE_URL = process.env.NEXT_PUBLIC_API_BASE;
+    const imageUrl = `${BASE_URL}/storage/product/${product.image}`;
+
 
     return (
         <Link href={`/product/${product.id}`}>

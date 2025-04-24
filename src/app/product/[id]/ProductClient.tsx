@@ -9,7 +9,8 @@ export default function ProductClient({ product }: { product: Product | null }) 
         return <div className="p-6 text-center text-red-500">Product not found.</div>;
     }
 
-    const imageUrl = `https://admin.refabry.com/storage/product/${product.image}`;
+    const BASE_URL = process.env.NEXT_PUBLIC_API_BASE;
+    const imageUrl = `${BASE_URL}/storage/product/${product.image}`;
 
     return (
         <div className="p-6 max-w-xl mx-auto">
