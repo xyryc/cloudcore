@@ -3,7 +3,7 @@ import { fetchAllProducts } from "@/lib/api";
 
 export default async function Home() {
   const products = await fetchAllProducts()
-  console.log(products)
+  // console.log(products)
 
   return (
     <main className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
