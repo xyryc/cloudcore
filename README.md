@@ -4,7 +4,7 @@ A stylish hoodie product display and ordering page built with **Next.js**, **Tai
 
 ### 🔗 Live Preview
 
-👉 [cloudcore-store.vercel.app](https://cloudcore-store.vercel.app/)
+[cloudcore-store.vercel.app](https://cloudcore-store.vercel.app/)
 
 ---
 
@@ -41,11 +41,29 @@ A stylish hoodie product display and ordering page built with **Next.js**, **Tai
 
 ---
 
-### 🧪 Local Setup (Optional)
+### 🧪 Local Setup
 
-```bash
-git clone https://github.com/xyryc/cloudcore0.git
-cd cloudcore-store
-npm install
-npm run dev
-```
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/xyryc/cloudcore0.git
+   cd cloudcore-store
+   ```
+
+2. Create a `.env` file in root directory and paste the below environment variables
+
+   ```
+   NEXT_PUBLIC_API_BASE=https://admin.refabry.com
+   ```
+
+3. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+4. Run locally:
+
+   ```
+   npm run dev
+   ```
